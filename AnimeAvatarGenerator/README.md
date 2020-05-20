@@ -1,5 +1,5 @@
 # Introduction in Chinese
-preparing
+https://mp.weixin.qq.com/s/MaCq0XeCNRwwHFFchY9X4g
 
 # Usage
 ```

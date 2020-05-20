@@ -7,7 +7,7 @@ You can star this repository to keep track of the project if it's helpful for yo
 # Contents
 |   Name                               |     Introduction                                                  |      Code                                                                              |     Type of GAN      |      In Chinese       |
 |   :----:                             |     :----:                                                        |      :----:                                                                            |     :----:           |      :----:           |
-|   AnimeAvatarGenerator               |     [click]()                                                     |      [click](https://github.com/CharlesPikachu/GAN/tree/master/AnimeAvatarGenerator)   |     DCGAN            |      动漫头像生成器   |
+|   AnimeAvatarGenerator               |     [click](https://mp.weixin.qq.com/s/MaCq0XeCNRwwHFFchY9X4g)    |      [click](https://github.com/CharlesPikachu/GAN/tree/master/AnimeAvatarGenerator)   |     DCGAN            |      动漫头像生成器   |
 
 # More
 #### WeChat Official Accounts
