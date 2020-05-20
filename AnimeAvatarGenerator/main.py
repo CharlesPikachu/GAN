@@ -54,7 +54,7 @@ def main():
     optimizer_d = buildOptimizer(net_d.parameters(), cfg.OPTIMIZER_CFG['discriminator'])
     # load the checkpoints
     if args.checkpointspath:
-        checkpoints = loadCheckpoints(checkpointspath, logger_handle)
+        checkpoints = loadCheckpoints(args.checkpointspath, logger_handle)
         net_d.load_state_dict(checkpoints['net_d'])
         net_g.load_state_dict(checkpoints['net_g'])
         optimizer_g.load_state_dict(checkpoints['optimizer_g'])
@@ -71,7 +71,7 @@ def main():
             logger_handle.info('Start epoch %s...' % epoch)
             for batch_idx, imgs in enumerate(dataloader):
                 imgs = imgs.type(FloatTensor)
-                z = FloatTensor(imgs.size(0), cfg.NUM_LATENT_DIMS, 1, 1).normal_(0, 1)
+                z = torch.randn(imgs.size(0), cfg.NUM_LATENT_DIMS, 1, 1).type(FloatTensor)
                 imgs_g = net_g(z)
                 # --train generator
                 optimizer_g.zero_grad()
@@ -101,13 +101,13 @@ def main():
                             }
                 savepath = os.path.join(cfg.BACKUP_DIR, 'epoch_%s.pth' % epoch)
                 saveCheckpoints(state_dict, savepath, logger_handle)
-                save_image(imgs_g.data[:16], os.path.join(cfg.BACKUP_DIR, 'images_epoch_%s.png' % epoch), nrow=4, normalize=True)
+                save_image(imgs_g.data[:25], os.path.join(cfg.BACKUP_DIR, 'images_epoch_%s.png' % epoch), nrow=5, normalize=True)
     # test the model
     else:
-        z = FloatTensor(imgs.size(0), cfg.NUM_LATENT_DIMS, 1, 1).normal_(0, 1)
+        z = torch.randn(imgs.size(0), cfg.NUM_LATENT_DIMS, 1, 1).type(FloatTensor)
         net_g.eval()
         imgs_g = net_g(z)
-        save_image(imgs_g.data[:16], 'images.png', nrow=4, normalize=True)
+        save_image(imgs_g.data[:25], 'images.png', nrow=5, normalize=True)
 
 
 '''run'''

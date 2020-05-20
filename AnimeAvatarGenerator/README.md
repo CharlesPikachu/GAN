@@ -15,6 +15,4 @@ optional arguments:
 ```
 
 # Demonstration
-#### Loss trend
-
-#### Generated Images
+![img](doc/result.jpg)
