@@ -104,7 +104,7 @@ def main():
                 save_image(imgs_g.data[:25], os.path.join(cfg.BACKUP_DIR, 'images_epoch_%s.png' % epoch), nrow=5, normalize=True)
     # test the model
     else:
-        z = torch.randn(imgs.size(0), cfg.NUM_LATENT_DIMS, 1, 1).type(FloatTensor)
+        z = torch.randn(cfg.BATCH_SIZE, cfg.NUM_LATENT_DIMS, 1, 1).type(FloatTensor)
         net_g.eval()
         imgs_g = net_g(z)
         save_image(imgs_g.data[:25], 'images.png', nrow=5, normalize=True)
