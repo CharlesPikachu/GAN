@@ -15,4 +15,4 @@ optional arguments:
 ```
 
 # Demonstration
-![img](doc/result.jpg)
+![img](docs/result.jpg)
